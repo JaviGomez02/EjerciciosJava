@@ -1,0 +1,2 @@
+System.out.println("¿Quieres introducir una nota? (S/N)");
+		opc=teclado.nextLine().charAt(0);

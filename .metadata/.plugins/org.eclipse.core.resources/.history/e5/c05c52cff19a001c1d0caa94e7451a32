@@ -1,0 +1,65 @@
+package com.jacaranda;
+
+
+
+public class Baraja {
+
+	protected int numCartas;
+	protected Carta[] baraja;
+	protected int siguiente;
+	
+	
+	public Baraja() {
+		super();
+		this.numCartas=40;
+		this.siguiente=0;
+		this.baraja=new Carta[numCartas];
+		}
+	
+	protected abstract String generaPalo() {
+		
+	}
+	
+	private int generaNumero() {
+		int num=(int) ((Math.random()*(this.numCartas/4))+1);
+		return num;
+	}
+	
+	public Carta getSiguiente() {
+		Carta resultado=new Carta(baraja[siguiente].getNumber(),baraja[siguiente].getPalo());
+		siguiente=siguiente+1;
+		return resultado;
+	}
+	
+	
+	
+	public void barajar() {
+		int i=0;
+		while (i<numCartas) {
+			Carta c=new Carta(generaNumero(),generaPalo());
+			boolean encontrado=false;
+			for (int j = 0; j < i && !encontrado; j++) {
+				if (baraja[j].equals(c)) {
+					encontrado=true;
+				}
+			}
+			if (!encontrado) {
+				baraja[i]=c;
+				i=i+1;
+			}
+			
+		}
+		siguiente=0;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder resultado=new StringBuilder();
+		for (int i = 0; i < numCartas; i++) {
+			resultado.append(baraja[i].toString()+ "\n");
+		}
+		return resultado.toString();
+	}
+	
+	
+}

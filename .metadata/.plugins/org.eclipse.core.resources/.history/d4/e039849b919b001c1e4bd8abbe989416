@@ -1,0 +1,5 @@
+package com.jacaranda.baraja;
+
+public abstract class Baraja {
+
+}

@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class CalculoCalificaciones {
+
+	public static Scanner teclado= new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		int practica,problemas,teorica;
+		double total,totalPractica,totalProblemas,totalTeorica;
+		
+		System.out.println("Introduce la calificacion de la parte practica");
+		practica=teclado.nextLine().charAt(0);
+		
+		System.out.println("Introduce la calificacion de la parte de problemas");
+		problemas=teclado.nextLine().charAt(0);
+		
+		System.out.println("Introduce la calificacion de la parte teorica");
+		teorica=teclado.nextLine().charAt(0);
+		
+		totalPractica=practica*10/100;
+		
+		
+		System.out.println("La nota final es: "+totalPractica);
+	}
+
+}

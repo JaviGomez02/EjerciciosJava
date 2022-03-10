@@ -1,0 +1,30 @@
+package com.jacaranda.baraja;
+
+public class BarajaEspannola extends Baraja {
+	
+	
+
+	public BarajaEspannola() {
+		super();
+		super.numCartas=40;
+	}
+
+	protected String generaPalo() {
+		int resultado=(int) ((Math.random()*4));
+		
+		return PalosBarajaEspannola.values()[resultado].toString();
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder resultado=new StringBuilder();
+		for (int i = 0; i < super.numCartas; i++) {
+			if (super.baraja[i].getNumber()<=7) {
+				resultado.append(super.baraja[i].getNumber()+ "\n");
+			}
+			resultado.append(super.baraja[i].toString()+ "\n");
+		}
+		return resultado.toString();
+		
+	}
+}

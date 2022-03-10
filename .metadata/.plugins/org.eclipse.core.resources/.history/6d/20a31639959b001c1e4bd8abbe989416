@@ -1,0 +1,21 @@
+package com.jacaranda.baraja;
+
+public class BarajaInglesa extends Baraja {
+
+	
+	private static final int CARTAS_INGLESA=52;
+	
+	public BarajaInglesa() {
+		super(CARTAS_INGLESA);
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	
+	@Override
+	protected String generaPalo() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

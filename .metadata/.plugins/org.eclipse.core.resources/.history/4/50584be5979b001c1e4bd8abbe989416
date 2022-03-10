@@ -1,0 +1,29 @@
+package com.jacaranda.baraja;
+
+public class BarajaEspannola {
+
+private static final int CARTAS_ESPANNOLA=52;
+	
+	
+
+	public BarajaEspannola() {
+	super(CARTAS_ESPANNOLA);
+	// TODO Auto-generated constructor stub
+}
+
+
+
+	protected String generaPalo() {
+		int resultado=(int) ((Math.random()*4));
+		
+		return PalosBarajaEspannola.values()[resultado].toString();
+	}
+
+
+
+	@Override
+	public String toString() {
+		StringBuilder resultado=new StringBuilder();
+		
+	}
+}

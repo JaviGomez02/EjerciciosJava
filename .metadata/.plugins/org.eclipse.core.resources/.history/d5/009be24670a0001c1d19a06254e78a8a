@@ -1,0 +1,104 @@
+package com.jacaranda;
+
+import java.util.Arrays;
+import java.util.Objects;
+
+public class Bloc {
+
+	private static final int NUMERO_NOTAS_MAXIMA = 50;
+	private int numNotas;
+	private String nombre;
+	private Nota[] notas;
+	private NotaAlarma n1;
+	
+	
+	public Bloc(String nombre) throws BlocException {
+		super();
+		if (nombre=="") {
+			throw new BlocException("El nombre no puede estar vacio");
+		}
+		this.nombre = nombre;
+		this.numNotas=0;
+	}
+
+	public String getNotas(int numero) {
+		return notas[numero].getTexto();
+	}
+
+	public void updateNota(int numero, String texto) throws BlocException {
+		if (texto=="") {
+			throw new BlocException("No puedes poner una nota vacia");
+		}
+		this.notas[numero].setTexto(texto);
+	}
+
+	public void activa(int numero) {
+		if (this.notas[numero] instanceof NotaAlarma) {
+			n1=(NotaAlarma)notas[numero];
+			n1.activar();
+		}
+		
+	}
+	
+	public void desactiva(int numero) {
+		if (this.notas[numero] instanceof NotaAlarma) {
+			n1=(NotaAlarma)notas[numero];
+			n1.desactivar();
+		}
+	}
+ 
+	public static int getNumeroNotasMaxima() {
+		return NUMERO_NOTAS_MAXIMA;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	@Override
+	public String toString() {
+		return "Bloc [numNotas=" + numNotas + ", nombre=" + nombre + ", notas=" + Arrays.toString(notas) + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Bloc other = (Bloc) obj;
+		return Objects.equals(nombre, other.nombre);
+	}
+	
+	public String ordenaBloc() {
+		Nota[] notasAuxiliar=new Nota[numNotas];
+		for (int i = 0; i < numNotas; i++) {
+			notasAuxiliar[i]=notas[i].clone();
+		}
+		Arrays.sort(notas);
+		String resultado=notas.toString();
+		return resultado;
+	}
+	
+	public void annadirNota(String texto) throws BlocException {
+		if (texto=="") {
+			throw new BlocException("No puedes poner una nota vacia");
+		}
+		this.notas[numNotas]=new Nota(texto);
+		numNotas++;
+	}
+	
+	public Nota clone() {
+		Nota resultado=new Nota(this.getTexto());
+		return resultado;
+	}
+	
+	
+}

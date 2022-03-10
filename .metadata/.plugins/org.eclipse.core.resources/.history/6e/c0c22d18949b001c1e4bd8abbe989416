@@ -1,0 +1,13 @@
+package com.jacaranda.baraja;
+
+public interface Repartible {
+	
+	public Carta getSiguiente() {
+		if (siguiente==this.numCartas) {
+			siguiente=0;
+		}
+		Carta resultado=new Carta(baraja[siguiente].getNumber(),baraja[siguiente].getPalo());
+		siguiente++;
+		return resultado;
+	}
+}
