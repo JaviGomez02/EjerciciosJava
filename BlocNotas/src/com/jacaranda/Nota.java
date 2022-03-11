@@ -97,6 +97,13 @@ public class Nota implements Comparable<Nota>{
 		return resultado;
 	}
 	
+	public Nota clone() {
+		Nota n=new Nota(this.getTexto());
+		n.codigo=this.getCodigo();
+		n.fechaCreacion=this.getFechaCreacion();
+		return n;
+	}
+	
 	
 	
 	

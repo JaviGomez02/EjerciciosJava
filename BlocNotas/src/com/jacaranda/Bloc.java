@@ -9,7 +9,6 @@ public class Bloc {
 	private int numNotas;
 	private String nombre;
 	private Nota[] notas;
-	private NotaAlarma n1;
 	
 	
 	public Bloc(String nombre) throws BlocException {
@@ -33,6 +32,7 @@ public class Bloc {
 	}
 
 	public void activa(int numero) {
+		NotaAlarma n1;
 		if (this.notas[numero] instanceof NotaAlarma) {
 			n1=(NotaAlarma)notas[numero];
 			n1.activar();
@@ -41,6 +41,7 @@ public class Bloc {
 	}
 	
 	public void desactiva(int numero) {
+		NotaAlarma n1;
 		if (this.notas[numero] instanceof NotaAlarma) {
 			n1=(NotaAlarma)notas[numero];
 			n1.desactivar();
@@ -77,15 +78,15 @@ public class Bloc {
 		return Objects.equals(nombre, other.nombre);
 	}
 	
-//	public String ordenaBloc() {
-//		Nota[] notasAuxiliar=new Nota[numNotas];
-//		for (int i = 0; i < numNotas; i++) {
-//			notasAuxiliar[i]=
-//		}
-//		Arrays.sort(notasAuxiliar);
-//		String resultado=Arrays.toString(notasAuxiliar);
-//		return resultado;
-//	}
+	public String ordenaBloc() {
+		Nota[] notasAuxiliar=new Nota[numNotas];
+		for (int i = 0; i < numNotas; i++) {
+			notasAuxiliar[i]=notas[i].clone();
+		}
+		Arrays.sort(notasAuxiliar);
+		String resultado=Arrays.toString(notasAuxiliar);
+		return resultado;
+	}
 	
 	public void annadirNota(String texto) throws BlocException {
 		if (texto=="") {
