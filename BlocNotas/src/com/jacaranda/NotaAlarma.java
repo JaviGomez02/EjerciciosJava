@@ -9,20 +9,26 @@ public class NotaAlarma extends Nota implements Activable{
 	private int minutosRepetir;
 	private boolean activado;
 	
-	public NotaAlarma(String texto, LocalDateTime fechaAlarma, Boolean activado) {
+	public NotaAlarma(String texto, LocalDateTime fechaAlarma, Boolean activado) throws NotaAlarmaException {
 		super(texto);
-		this.fechaAlarma = LocalDateTime.now();
+		if (this.fechaAlarma.isBefore(LocalDateTime.now())) {
+			throw new NotaAlarmaException("La fecha de la alarma no puede ser anterior a la fecha actual");
+		}
+		this.fechaAlarma = fechaAlarma;
 		this.minutosRepetir = MINUTOS_REPETIR_POR_DEFECTO;
 		this.activado = activado;
 	}
 
 	public NotaAlarma(String texto, LocalDateTime fechaAlarma, int minutosRepetir) throws NotaAlarmaException {
 		super(texto);
+		if (this.fechaAlarma.isBefore(LocalDateTime.now())) {
+			throw new NotaAlarmaException("La fecha de la alarma no puede ser anterior a la fecha actual");
+		}
 		if (minutosRepetir<=0) {
 			throw new NotaAlarmaException("Los minutos deben ser mayor de 0");
 		}
 		
-		this.fechaAlarma = LocalDateTime.now();
+		this.fechaAlarma = fechaAlarma;
 		this.minutosRepetir = minutosRepetir;
 	}
 
@@ -30,7 +36,10 @@ public class NotaAlarma extends Nota implements Activable{
 		return MINUTOS_REPETIR_POR_DEFECTO;
 	}
 
-	private void setFechaAlarma(LocalDateTime fechaAlarma) {
+	private void setFechaAlarma(LocalDateTime fechaAlarma) throws NotaAlarmaException {
+		if (this.fechaAlarma.isBefore(LocalDateTime.now())) {
+			throw new NotaAlarmaException("La fecha de la alarma no puede ser anterior a la fecha actual");
+		}
 		this.fechaAlarma = fechaAlarma;
 	}
 	
@@ -43,14 +52,7 @@ public class NotaAlarma extends Nota implements Activable{
 	}
 	
 	public boolean isActivado() {
-		boolean resultado;
-		if (this.activado==true) {
-			resultado=true;
-		}
-		else {
-			resultado=false;
-		}
-		return resultado;
+		return this.activado;
 	}
 
 	@Override
@@ -58,5 +60,7 @@ public class NotaAlarma extends Nota implements Activable{
 		return "NotaAlarma [fechaAlarma=" + fechaAlarma + ", minutosRepetir=" + minutosRepetir + ", activado="
 				+ activado + "]";
 	}
+
+	
 	
 }

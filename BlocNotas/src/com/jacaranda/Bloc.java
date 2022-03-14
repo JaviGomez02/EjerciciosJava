@@ -18,6 +18,7 @@ public class Bloc {
 		}
 		this.nombre = nombre;
 		this.numNotas=0;
+		this.notas=new Nota[NUMERO_NOTAS_MAXIMA];
 	}
 
 	public String getNotas(int numero) {

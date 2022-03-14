@@ -7,4 +7,10 @@
     <fullyQualifiedTypeName name="com.jacaranda.ParkingException"/>
     <fullyQualifiedTypeName name="java.time.LocalDateTime"/>
     <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.time.temporal.ChronoUnit"/>
+    <fullyQualifiedTypeName name="com.jacaranda.vehiculo.Vehiculo"/>
+    <fullyQualifiedTypeName name="java.time.LocalDate"/>
+    <fullyQualifiedTypeName name="com.jacaranda.vehiculo.Coche"/>
+    <fullyQualifiedTypeName name="com.jacaranda.vehiculo.Furgoneta"/>
+    <fullyQualifiedTypeName name="com.jacaranda.vehiculo.Microbus"/>
 </qualifiedTypeNameHistroy>

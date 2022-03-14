@@ -51,8 +51,8 @@
 		<item key="RemoveFinal" value="false"/>
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
-		<item key="DIALOG_X_ORIGIN" value="237"/>
-		<item key="DIALOG_Y_ORIGIN" value="197"/>
+		<item key="DIALOG_X_ORIGIN" value="84"/>
+		<item key="DIALOG_Y_ORIGIN" value="236"/>
 		<item key="DIALOG_WIDTH" value="628"/>
 		<item key="DIALOG_HEIGHT" value="780"/>
 		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
@@ -132,7 +132,7 @@
 		<item key="fromStandard" value="true"/>
 		<item key="docletname" value=""/>
 		<item key="docletpath" value=""/>
-		<item key="access" value="private"/>
+		<item key="access" value="public"/>
 		<item key="use" value="true"/>
 		<item key="author" value="true"/>
 		<item key="version" value="true"/>
@@ -144,8 +144,8 @@
 		<item key="nonavbar" value="false"/>
 		<item key="openinbrowser" value="false"/>
 		<item key="source" value="16"/>
-		<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/MalosOlores/javadoc.xml"/>
-		<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/MalosOlores/doc"/>
+		<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/Vehículos/javadoc.xml"/>
+		<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/Vehículos/doc"/>
 		<section name="projects">
 			<section name="Cuenta">
 				<item key="href" value=""/>
@@ -172,25 +172,20 @@
 				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/Parking/doc"/>
 				<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/Parking/javadoc.xml"/>
 			</section>
+			<section name="BlocNotas">
+				<item key="href" value=""/>
+				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/BlocNotas/doc"/>
+				<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/BlocNotas/javadoc.xml"/>
+			</section>
 			<section name="EjercicioProducto">
 				<item key="href" value=""/>
 				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/EjercicioProducto/doc"/>
 				<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/EjercicioProducto/javadoc.xml"/>
 			</section>
-			<section name="7yMedia">
-				<item key="href" value=""/>
-				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/7yMedia/doc"/>
-				<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/7yMedia/javadoc.xml"/>
-			</section>
 			<section name="PeliculasPersonajes">
 				<item key="href" value=""/>
 				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/PeliculasPersonajes/doc"/>
 				<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/PeliculasPersonajes/javadoc.xml"/>
-			</section>
-			<section name="BarajaCartas">
-				<item key="href" value=""/>
-				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/BarajaCartas/doc"/>
-				<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/BarajaCartas/javadoc.xml"/>
 			</section>
 			<section name="Proyecto Sincronizado">
 				<item key="href" value=""/>
@@ -227,6 +222,11 @@
 				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/PrimerosEjerciciosJava/doc"/>
 				<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/PrimerosEjerciciosJava/javadoc.xml"/>
 			</section>
+			<section name="Vehículos">
+				<item key="href" value=""/>
+				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/Vehículos/doc"/>
+				<item key="antpath" value="/home/estudiante/Documents/Dawn/Programación/Java/Vehículos/javadoc.xml"/>
+			</section>
 			<section name="7yMediaHerencia">
 				<item key="href" value=""/>
 				<item key="destdir" value="/home/estudiante/Documents/Dawn/Programación/Java/7yMediaHerencia/doc"/>
@@ -240,6 +240,12 @@
 		</section>
 	</section>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item key="renameSubpackages" value="false"/>
+		<item key="updateTextualMatches" value="false"/>
+		<item key="updateQualifiedNames" value="false"/>
+		<item key="patterns" value="*"/>
+		<item key="updateSimilarElements" value="false"/>
+		<item key="updateSimilarElementsMatchStrategy" value="1"/>
 	</section>
 	<section name="JavaSearchPage">
 		<item key="CASE_SENSITIVE" value="false"/>
@@ -263,6 +269,21 @@
 		<item key="DIALOG_Y_ORIGIN" value="102"/>
 		<item key="DIALOG_WIDTH" value="647"/>
 		<item key="DIALOG_HEIGHT" value="610"/>
+		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
+	</section>
+	<section name="RefactoringWizard.preview">
+		<item key="width" value="600"/>
+		<item key="height" value="400"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.dialogs.OpenTypeSelectionDialog2">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History/&gt;"/>
+	</section>
+	<section name="DialogBounds_SuperInterfaceSelectionDialog">
+		<item key="DIALOG_X_ORIGIN" value="104"/>
+		<item key="DIALOG_Y_ORIGIN" value="-26"/>
+		<item key="DIALOG_WIDTH" value="416"/>
+		<item key="DIALOG_HEIGHT" value="590"/>
 		<item key="DIALOG_FONT_NAME" value="1|Cantarell|11.0|0|GTK|1|"/>
 	</section>
 </section>

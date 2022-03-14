@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Furgoneta extends Vehiculo {
 
 	private double peso;
-	private final double precioPorPeso=0.5;
+	private static final double PRECIO_POR_PESO=0.5;
 	public Furgoneta(String matricula, String gama, LocalDate fechaSalida, double peso) throws VehiculoException {
 		super(matricula, gama, fechaSalida);
 		this.peso = peso;
@@ -15,16 +15,16 @@ public class Furgoneta extends Vehiculo {
 	}
 	
 	public double getPrecioPorPeso() {
-		return precioPorPeso;
+		return PRECIO_POR_PESO;
 	}
 	public double getPrecio() {
-		double resultado=super.getPrecio()+this.precioPorPeso*this.peso;
+		double resultado=super.getPrecio()+PRECIO_POR_PESO*this.peso;
 		
 		return resultado;
 	}
 	@Override
 	public String toString() {
-		return "Furgoneta [peso=" + peso + ", precioPorPeso=" + precioPorPeso + ", toString()=" + super.toString()
+		return "Furgoneta [peso=" + peso + ", precioPorPeso=" + PRECIO_POR_PESO + ", toString()=" + super.toString()
 				+ "]";
 	}
 	
