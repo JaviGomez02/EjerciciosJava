@@ -10,11 +10,13 @@ public class Nota implements Comparable<Nota>{
 	protected String texto;
 	protected LocalDateTime fechaCreacion;
 	protected LocalDateTime fechaUltimaModificacion;
+	
 	public Nota(String texto) {
 		super();
 		this.texto = texto;
 		this.fechaCreacion=LocalDateTime.now();
 		this.codigo=codigoSiguiente++;
+		this.fechaUltimaModificacion=this.fechaCreacion;
 	}
 	public String getTexto() {
 		return texto;
@@ -33,9 +35,9 @@ public class Nota implements Comparable<Nota>{
 		return fechaUltimaModificacion;
 	}
 	
-	public boolean isCreadoAnterior(Nota nota) throws Exception {
-		if (nota.fechaCreacion==null || this.fechaCreacion==null) {
-			throw new Exception("Los valores no pueden ser nulos");
+	public boolean isCreadoAnterior(Nota nota) throws NotaException {
+		if (nota==null) {
+			throw new NotaException("Los valores no pueden ser nulos");
 		}
 		boolean resultado;
 		if (nota.fechaCreacion.isBefore(this.getFechaCreacion())) {
@@ -48,8 +50,11 @@ public class Nota implements Comparable<Nota>{
 	}
 	
 	public boolean isModificado() {
-		boolean resultado=false;
-		if (this.fechaUltimaModificacion==null) {
+		boolean resultado;
+		if (this.fechaUltimaModificacion.equals(fechaCreacion)) {
+			resultado=false;
+		}
+		else {
 			resultado=true;
 		}
 		return resultado;

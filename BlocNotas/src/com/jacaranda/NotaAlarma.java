@@ -27,7 +27,7 @@ public class NotaAlarma extends Nota implements Activable{
 		if (minutosRepetir<=0) {
 			throw new NotaAlarmaException("Los minutos deben ser mayor de 0");
 		}
-		
+		this.activado=true;
 		this.fechaAlarma = fechaAlarma;
 		this.minutosRepetir = minutosRepetir;
 	}
