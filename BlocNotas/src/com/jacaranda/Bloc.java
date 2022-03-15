@@ -21,7 +21,11 @@ public class Bloc {
 		this.notas=new Nota[NUMERO_NOTAS_MAXIMA];
 	}
 
-	public String getNotas(int numero) {
+	public String getNotas(int numero) throws BlocException {
+		if (numero>=numNotas) {
+			throw new BlocException("Introduce un valor correcto");
+
+		}
 		return notas[numero].getTexto();
 	}
 
@@ -32,20 +36,32 @@ public class Bloc {
 		this.notas[numero].setTexto(texto);
 	}
 
-	public void activa(int numero) {
+	public void activa(int numero) throws BlocException {
+		if (numero>=numNotas) {
+			throw new BlocException("Introduce un valor correcto");
+		}
 		NotaAlarma n1;
 		if (this.notas[numero] instanceof NotaAlarma) {
 			n1=(NotaAlarma)notas[numero];
 			n1.activar();
 		}
+		else {
+			throw new BlocException("La nota introducida no tiene alarma");
+		}
 		
 	}
 	
-	public void desactiva(int numero) {
+	public void desactiva(int numero) throws BlocException {
+		if (numero>=numNotas) {
+			throw new BlocException("Introduce un valor correcto");
+		}
 		NotaAlarma n1;
 		if (this.notas[numero] instanceof NotaAlarma) {
 			n1=(NotaAlarma)notas[numero];
 			n1.desactivar();
+		}
+		else {
+			throw new BlocException("La nota introducida no tiene alarma");
 		}
 	}
  
@@ -81,12 +97,15 @@ public class Bloc {
 	
 	public String ordenaBloc() {
 		Nota[] notasAuxiliar=new Nota[numNotas];
+		StringBuilder resultado=new StringBuilder();
 		for (int i = 0; i < numNotas; i++) {
 			notasAuxiliar[i]=notas[i].clone();
 		}
 		Arrays.sort(notasAuxiliar);
-		String resultado=Arrays.toString(notasAuxiliar);
-		return resultado;
+		for (int i = 0; i < numNotas; i++) {
+			resultado.append(notasAuxiliar[i]+"\n");
+		}
+		return resultado.toString();
 	}
 	
 	public void annadirNota(String texto) throws BlocException {
@@ -97,12 +116,15 @@ public class Bloc {
 		numNotas++;
 	}
 	
-	public void borrarNota(int numero) {
+	public void borrarNota(int numero) throws BlocException {
+		if (numero>=numNotas) {
+			throw new BlocException("La posicion no es correcta");
+		}
 		notas[numero]=null;
 		for (int i = numero; i < numNotas; i++) {
 			notas[i]=notas[i+1];
 		}
-		numNotas=numNotas-1;
+		numNotas--;
 	}
 	
 	

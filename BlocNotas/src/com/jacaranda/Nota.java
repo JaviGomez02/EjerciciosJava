@@ -67,7 +67,7 @@ public class Nota implements Comparable<Nota>{
 		return resultado;
 	}
 	public boolean isModificadoAnterior(Nota nota) throws Exception {
-		if (nota.fechaUltimaModificacion==null || this.fechaUltimaModificacion==null) {
+		if (nota==null) {
 			throw new Exception("Los valores no pueden ser nulos");
 		}
 		boolean resultado=false;
@@ -98,6 +98,7 @@ public class Nota implements Comparable<Nota>{
 		Nota other = (Nota) obj;
 		return Objects.equals(fechaCreacion, other.fechaCreacion) && Objects.equals(texto, other.texto);
 	}
+	
 	@Override
 	public int compareTo(Nota o) {
 		int resultado=this.texto.compareToIgnoreCase(o.getTexto());
