@@ -1,9 +1,12 @@
 package com.jacaranda;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
+
 public class Libro {
+
 
 	protected String titulo;
 	protected String autor;
@@ -78,10 +81,17 @@ public class Libro {
 	}
 	@Override
 	public String toString() {
-		return "Libro: " + titulo + ". Autor: " + autor + ". ISBN: " + isbn + ". CÃ³digo: "+codigo;
+		return "Libro: " + titulo + ". Autor: " + autor + ". ISBN: " + isbn + ". Código: "+codigo;
 	}
 	
-	
+	public int numDias(Libro other) {
+		int resultado;
+		resultado=(int) ChronoUnit.DAYS.between(this.fechaEdicion, other.getFechaEdicion());
+		if (resultado<0) {
+			resultado=-resultado;
+		}
+		return resultado;
+	}
 	
 	
 	
